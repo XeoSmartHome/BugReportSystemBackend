@@ -2,6 +2,7 @@ package main
 
 import (
 	"BugReportSystemBackend/API/Auth"
+	"BugReportSystemBackend/API/Bugs"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -15,6 +16,7 @@ func CreateApp() *gin.Engine {
 	app.GET("/", handleMain)
 
 	Auth.Init(app)
+	Bugs.Init(app)
 
 	return app
 }
